@@ -23,9 +23,9 @@ abstract class AbstractAuthProviderClient extends Client
      * Constructor
      *
      * @param array $authRealms
-     * @param \React\EventLoop\LoopInterface $loop
+     * @param \React\EventLoop\LoopInterface|null $loop
      */
-    public function __construct(Array $authRealms, LoopInterface $loop = null)
+    public function __construct(Array $authRealms, ?LoopInterface $loop = null)
     {
 
         $this->authRealms = $authRealms;

@@ -61,7 +61,7 @@ class AbortingRouterTest extends \Thruway\Tests\TestCase {
 
         $this->_conn->on(
             'error',
-            function ($reason, \Thruway\Message\AbortMessage $msg = null) {
+            function ($reason, ?\Thruway\Message\AbortMessage $msg = null) {
                 $this->assertInstanceOf('\Thruway\Message\AbortMessage', $msg);
                 $this->assertEquals("my.custom.abort.uri", $msg->getResponseURI());
                 $this->assertEquals("My custom abort message", $msg->getDetails()->message);
@@ -98,7 +98,7 @@ class AbortingRouterTest extends \Thruway\Tests\TestCase {
 
         $this->_conn->on(
             'error',
-            function ($reason, \Thruway\Message\AbortMessage $msg = null) {
+            function ($reason, ?\Thruway\Message\AbortMessage $msg = null) {
                 $this->assertInstanceOf('\Thruway\Message\AbortMessage', $msg);
                 $this->assertEquals("my.custom.abort.uri.2", $msg->getResponseURI());
                 $this->assertEquals("My custom abort message 2", $msg->getDetails()->message);
