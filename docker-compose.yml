@@ -1,0 +1,9 @@
+services:
+  php:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    working_dir: /src
+    entrypoint: bash
+    volumes:
+      - ./:/src
